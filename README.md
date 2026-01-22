@@ -1,98 +1,151 @@
-# React Native Music Player
+<!-- Banner -->
+<div align="center">
+  <img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&height=220&section=header&text=React%20Native%20Music%20Player&fontSize=48&fontAlignY=38&animation=twinkling&fontColor=white" width="100%"/>
+</div>
 
-A music streaming application built with **React Native (Expo)** using the **JioSaavn public API**.
-The project focuses on clean architecture, global player state synchronization, and a polished playback experience.
+<p align="center">
+  <b>Production-focused music streaming app · Built with Expo & TypeScript</b>
+</p>
 
----
-
-## Features
-
-* Song search using the JioSaavn API
-* Home screen with dynamic results
-* Full-screen music player
-* Persistent mini player synced across navigation
-* Play / pause, next / previous controls
-* Seek bar with real-time progress
-* Shuffle and repeat modes
-* Background audio playback
+<img src="https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png" width="100%">
 
 ---
 
-## Tech Stack
+## ✨ Overview
 
-* **React Native (Expo) + TypeScript**
-* **React Navigation v6**
-* **Zustand** for global state management
-* **Expo AV** for audio playback
-* **AsyncStorage** for persistence
+> A **React Native music streaming application** built using the **JioSaavn public API**, focused on player synchronization, clean architecture, and interview-ready engineering decisions.
 
-> MMKV was explored for storage but AsyncStorage is used to ensure full compatibility with Expo Go during development.
+This project emphasizes **how a real music player behaves**, not just how it looks.
+
+<img src="https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png" width="100%">
 
 ---
 
-## Architecture Overview
+## 🎧 Core Features
 
-* Centralized player state using Zustand ensures perfect synchronization between:
+<div align="center">
 
-  * Home screen
-  * Mini player
-  * Full player
-* UI components are kept stateless where possible
-* Audio lifecycle is managed in a single store to avoid desynchronization bugs
+| Feature | Description |
+|------:|-------------|
+| 🎵 Search | Search songs using real JioSaavn API |
+| ▶️ Player | Full-screen audio player |
+| 📌 Mini Player | Persistent & synced across navigation |
+| ⏯ Controls | Play / Pause / Next / Previous |
+| 🎚 Seek Bar | Real-time progress tracking |
+| 🔀 Shuffle | Randomized playback mode |
+| 🔁 Repeat | Off / All / One |
+| 🌙 Background | Audio continues in background |
+
+</div>
+
+<img src="https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png" width="100%">
 
 ---
 
-## Trade-offs & Decisions
+## 🧭 Architecture Philosophy
 
-* Offline downloads are planned but not enabled in the current Expo Go build
-  (requires custom native builds for stable filesystem access)
-* UI closely follows the provided Figma design, prioritizing usability over pixel-perfect replication
-* Minimal abstractions are used to keep the codebase readable and maintainable
+<div align="center">
+
+| Principle | Implementation |
+|--------:|----------------|
+| Single source of truth | Zustand-based global player store |
+| Sync guarantee | Mini Player & Full Player share state |
+| Stateless UI | Screens focus only on rendering |
+| Predictable audio | Centralized audio lifecycle |
+
+</div>
+
+Each screen reacts to **player state**, never controls it independently.
+
+<img src="https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png" width="100%">
 
 ---
 
-## Setup Instructions
+## 🧠 Player State Design (Quick View)
+
+<div align="center">
+
+### `Queue → Current Index → Audio Instance → UI Sync`
+
+</div>
+
+- Queue persistence handled centrally  
+- Navigation does not reset playback  
+- Player state survives screen transitions  
+
+<img src="https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png" width="100%">
+
+---
+
+## ⚙️ Tech Stack
+
+<div align="center">
+
+| Layer | Technology |
+|----|-----------|
+| 📱 Framework | React Native (Expo) |
+| 🧠 Language | TypeScript |
+| 🧭 Navigation | React Navigation v6 |
+| 🎶 Audio | Expo AV |
+| 🗂 State | Zustand |
+| 💾 Storage | AsyncStorage |
+| 🌐 API | JioSaavn (public) |
+
+</div>
+
+<img src="https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png" width="100%">
+
+---
+
+## 🧪 Development Setup
 
 ### Prerequisites
+- Node.js (v18+ recommended)
+- Expo Go (Android / iOS)
 
-* Node.js (v18+ recommended)
-* Expo Go app (Android or iOS)
-
-### Installation
-
+### Install dependencies
 ```bash
 npm install
-```
-
-### Run the app
-
-```bash
+Run the app
 npx expo start
 ```
+Scan the QR code using Expo Go on your phone
+(or press a if an Android emulator is already running).
 
-Scan the QR code using **Expo Go** on your mobile device
-(or press `a` to launch on an Android emulator if configured).
+<img src="https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png" width="100%">
+⚖️ Trade-offs & Decisions
+Offline downloads are planned but disabled in the Expo Go build
 
----
+AsyncStorage used for compatibility during development
 
-## Future Improvements
+UI follows Figma closely while prioritizing usability over pixel perfection
 
-* Offline song downloads with local playback
-* Queue reordering UI
-* Dark / light theme toggle
-* Improved error handling for network failures
+No mock data used — all results come from real APIs
 
----
+<img src="https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png" width="100%">
+🚀 Future Enhancements
+Offline playback with local caching
 
-## Demo & Submission
+Queue reordering UI
 
-* Source code: GitHub repository
-* Platform: Android (Expo)
-* Demo: Available on request
+Dark / Light theme toggle
 
----
+Improved network error handling
 
-## Notes
+Playlist & artist detail screens
 
-This project avoids mock data and uses real API responses throughout.
-The focus is on correctness, synchronization, and clarity rather than over-engineering.
+<img src="https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png" width="100%">
+📦 Submission Notes
+Platform: Android (Expo)
+
+Source: GitHub repository
+
+Demo: Available on request
+
+This project avoids over-engineering and focuses on correctness, synchronization, and maintainability.
+
+<img src="https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png" width="100%">
+🧠 Final Thought
+<div align="center">
+“A music player is only as good as its sync.”
+</div> 
